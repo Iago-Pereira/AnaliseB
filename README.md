@@ -11,13 +11,18 @@ Dockerfile # Definição do contêiner
 
 code/
 ├── ingestao.py # Código para ingestão dos dados
+
 ├── engine.py # Configuração da conexão com o banco
+
 ├── view.sql # Script de criação da view
+
 ├── ddl.sql # Script de criação de tabelas e extensões, se necessário
 
 data/
 ├── SCM/ # Diretório com dados para ingestão (Serviço de Comunicação Multimídia)
+
 ├── SMP/ # Diretório com dados para ingestão (Serviço Móvel Pessoal)
+
 ├── STFC/ # Diretório com dados para ingestão (Serviço Telefônico Fixo Comutado)
 
 
