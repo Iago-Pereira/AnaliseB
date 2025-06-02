@@ -77,6 +77,24 @@ docker-compose up
 - O serviço executará os scripts de criação de tabelas, ingestão e consulta automaticamente.
 - Os logs da execução serão exibidos no terminal.
 
+---
+
+## Requisitos
+
+- **Docker** e **docker-compose** instalados.
+- Banco de dados compatível com PostgreSQL.
+- Python 3.11+ (usado na imagem base do Docker).
+- As bibliotecas `pandas`, `SQLAlchemy`, `unidecode` e demais dependências são instaladas automaticamente no contêiner.
+
+---
+
+## Observações Importantes
+
+- Configure corretamente o `docker-compose.yml` com as credenciais e endereços do banco de dados.
+- O diretório `data/` deve conter os dados correspondentes para que o processo de ingestão funcione.
+
+---
+
 # Bibliotecas Otimizadoras da Tarefa 
 
 ## Pandas
@@ -117,21 +135,3 @@ A combinação de **Pandas + SQLAlchemy** torna o fluxo de ingestão e análise 
 - Ambas as bibliotecas **reduzem significativamente o tempo e a complexidade do desenvolvimento**, eliminando a necessidade de escrever comandos SQL extensos e complexos e permitindo uma automação eficiente do processo.
 
 Essas bibliotecas juntas permitem que o projeto seja mais ágil, seguro e robusto para lidar com grandes volumes de dados e transformações analíticas.
-
----
-
-## Requisitos
-
-- **Docker** e **docker-compose** instalados.
-- Banco de dados compatível com PostgreSQL.
-- Python 3.11+ (usado na imagem base do Docker).
-- As bibliotecas `pandas`, `SQLAlchemy`, `unidecode` e demais dependências são instaladas automaticamente no contêiner.
-
----
-
-## Observações Importantes
-
-- Configure corretamente o `docker-compose.yml` com as credenciais e endereços do banco de dados.
-- O diretório `data/` deve conter os dados correspondentes para que o processo de ingestão funcione.
-
-
