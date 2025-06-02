@@ -7,9 +7,11 @@ Este projeto calcula a taxa de variação percentual de atendimentos por grupo e
 ## Estrutura do Repositório
 
 docker-compose.yml # Orquestração de serviços com Docker
+
 Dockerfile # Definição do contêiner
 
 code/
+
 ├── ingestao.py # Código para ingestão dos dados
 
 ├── engine.py # Configuração da conexão com o banco
@@ -19,6 +21,7 @@ code/
 ├── ddl.sql # Script de criação de tabelas e extensões, se necessário
 
 data/
+
 ├── SCM/ # Diretório com dados para ingestão (Serviço de Comunicação Multimídia)
 
 ├── SMP/ # Diretório com dados para ingestão (Serviço Móvel Pessoal)
