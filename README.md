@@ -77,8 +77,46 @@ docker-compose up
 - O serviço executará os scripts de criação de tabelas, ingestão e consulta automaticamente.
 - Os logs da execução serão exibidos no terminal.
 
-5. **Exportar o Resultado**
-- O DataFrame `df_resultado` pode ser configurado para exportar como CSV ou imagem no script `ingestao.py`.
+# Bibliotecas Otimizadoras da Tarefa 
+
+## Pandas
+
+[Pandas](https://pandas.pydata.org/) é uma biblioteca poderosa e flexível para manipulação e análise de dados em Python. Ela oferece estruturas de dados eficientes, como `DataFrame` e `Series`, e uma ampla gama de funcionalidades para:
+
+- **Leitura e gravação de dados**: CSV, Excel, bancos de dados, entre outros.
+- **Transformação e limpeza de dados**: filtros, agrupamentos, cálculos agregados.
+- **Análise estatística**: geração de insights, cálculo de tendências e visualização.
+
+No contexto deste projeto, o Pandas permite:
+
+- **Leitura fácil dos arquivos de dados brutos** (CSV) baixados do portal oficial.
+- **Realização de transformações complexas e cálculos** de forma simples e eficiente (como a taxa de variação).
+- **Exportação de resultados** para formatos como CSV ou até imagens (por meio de visualizações e tabelas renderizadas).
+
+## SQLAlchemy
+
+[SQLAlchemy](https://www.sqlalchemy.org/) é uma biblioteca que facilita a **conexão e interação com bancos de dados relacionais** no Python. Ela oferece:
+
+- Uma **abstração de alto nível sobre SQL**, permitindo trabalhar com objetos Python em vez de strings SQL.
+- **Mapeamento objeto-relacional (ORM)** para manipular tabelas como se fossem classes Python.
+- Gerenciamento eficiente de **conexões e transações** com o banco de dados.
+- Portabilidade entre diferentes sistemas de gerenciamento de bancos de dados (PostgreSQL, MySQL, SQLite, etc.).
+
+Neste projeto, o SQLAlchemy permite:
+
+- **Conectar-se ao banco de dados PostgreSQL** de forma simples e segura.
+- **Inserir dados do Pandas DataFrame** diretamente nas tabelas do banco com `to_sql`.
+- **Executar queries complexas** ou chamadas de stored procedures/views como métodos Python.
+
+## Benefícios Combinados
+
+A combinação de **Pandas + SQLAlchemy** torna o fluxo de ingestão e análise de dados mais prático e eficiente:
+
+- O Pandas facilita o processamento e transformação dos dados de entrada.
+- O SQLAlchemy simplifica a conexão e o carregamento dos dados no banco de dados.
+- Ambas as bibliotecas **reduzem significativamente o tempo e a complexidade do desenvolvimento**, eliminando a necessidade de escrever comandos SQL extensos e complexos e permitindo uma automação eficiente do processo.
+
+Essas bibliotecas juntas permitem que o projeto seja mais ágil, seguro e robusto para lidar com grandes volumes de dados e transformações analíticas.
 
 ---
 
