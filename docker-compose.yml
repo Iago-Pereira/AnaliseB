@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:17.5-bookworm
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: IagoPereira
+      POSTGRES_PASSWORD: Dal3Bamb4
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_python_app
+    volumes:
+      - ./code:/app/code
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
